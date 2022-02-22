@@ -4,7 +4,7 @@
 
 CREATE DATABASE occupations;
 
-\c astronauts
+\c occupations;
 
 DROP TABLE IF EXISTS Occupations;
 
