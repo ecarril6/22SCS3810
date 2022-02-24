@@ -23,6 +23,9 @@ INSERT INTO Departments VALUES
   ( 'IT', 'Information Technology' ),
   ( 'SL', 'Sales');
 
+INSERT INTO Departments VALUES
+  ( 'MK', 'Marketing' );
+
 -- TODO: create table employees
 
 CREATE TABLE Employees (
@@ -80,6 +83,29 @@ SELECT * FROM Employees NATURAL JOIN Departments;
 -- TODO: i) do an equi join of Employees and Departments matching the rows by Employees.deptCode and Departments.code (hint: use JOIN and the ON clause).
 SELECT * FROM Employees INNER JOIN Departments ON deptCode = code;
 
+-- left semi-join
+SELECT id, name, sal, deptCode FROM Employees INNER JOIN Departments ON deptCode = code;
+
+-- left join
+SELECT * FROM Employees LEFT JOIN Departments ON deptCode = code;
+
+-- left anti semi-join
+SELECT * FROM Employees LEFT JOIN Departments ON deptCode = code WHERE deptCode IS NULL;
+
+-- right (outer) join
+SELECT * FROM Employees RIGHT JOIN Departments ON deptCode = code;
+
+-- right anti semi join
+SELECT * FROM Employees RIGHT JOIN Departments ON deptCode = code WHERE deptCode IS NULL;
+
+-- full join
+SELECT * FROM Employees FULL JOIN Departments ON deptCode = code;
+
+
+-- right semi-join
+SELECT DISTINCT code, "desc" FROM Employees INNER JOIN Departments ON deptCode = code;
+
+
 SELECT * FROM Employees, Departments WHERE deptCode = code;
 
 -- TODO: j) same as previous query but project name and salary of the employees plus the description of their departments.
@@ -92,8 +118,13 @@ SELECT A.name, A.sal, B."desc" FROM Employees A, Departments B WHERE deptCode = 
 
 -- TODO: l) same as query ‘i’  but only the employees that earn more than ‘Jose Caipirinha’.
 
-SELECT sal FROM Employees WHERE name LIKE 'Jose Caipi%');
-SELECT * FROM Employees, Departments WHERE deptCode = code AND sal > 65000;
+-- mysql
+-- SELECT @sal := sal FROM Employees WHERE name LIKE 'Jose Caipi%';
+-- SELECT * FROM Employees, Departments WHERE deptCode = code AND sal > %sal;
+
+-- postgres (many thanks to Caelan)
+\set sal '(SELECT sal FROM Employees WHERE name = \'Jose Caipirinha\')';
+SELECT * FROM Employees, Departments WHERE deptCode = code AND sal > :sal;
 
 -- TODO: m) list the left outer join of Employees and Departments (use the ON clause to match by department code); how does the result of this query differs from query ‘i’?
 SELECT * FROM Employees A LEFT OUTER JOIN Departments B ON A.deptCode = B.code;
@@ -105,4 +136,4 @@ SELECT * FROM Employees A LEFT OUTER JOIN Departments B ON A.deptCode = B.code W
 SELECT deptCode, COUNT(deptCode) FROM Employees GROUP BY deptCode HAVING deptCode IS NOT NULL;
 
 -- TODO: p) same as query ‘o’ but I want to see the description of each department (not just their codes).
-SELECT "desc" AS "Department Description", COUNT(deptCode) AS "Total" FROM Employees INNER JOIN Departments ON deptCode = code GROUP BY deptCode HAVING deptCode IS NOT NULL;
+SELECT "desc" AS "Department Description", COUNT(deptCode) AS "Total" FROM Employees INNER JOIN Departments ON deptCode = code GROUP BY "desc";
