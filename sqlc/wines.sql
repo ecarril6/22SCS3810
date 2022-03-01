@@ -1,5 +1,5 @@
 -- wines database
--- team: <your name(s)>
+-- team: Emily Carrillo
 
 CREATE DATABASE wines;
 
