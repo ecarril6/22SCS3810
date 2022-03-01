@@ -125,16 +125,20 @@ INSERT INTO Purchases VALUES
     ('mspell@gmail.com', 606, 234, '2022-03-17', 50);
 
 -- TODO #1: the most expensive wine in the collection 
+SELECT name, MAX(price) From Wines GROUP BY name;
 
 -- TODO #2: the number of wines per region in the collection 
 
 -- TODO #3: the region that has the most wines in the collection 
 
 -- TODO #4: an alphabetical list of all wines in the collection 
+SELECT Wines FROM Wines ORDER BY name;
 
 -- TODO #5: an alphabetical list of the wineries that sell 'Merlot' wines 
 
+
 -- TODO #6: the average price of wines in the collection 
+SELECT AVG(price) FROM Wines;
 
 -- TODO #7: the name of the winery that has the most expensive wine in the collection 
 
@@ -145,10 +149,13 @@ INSERT INTO Purchases VALUES
 -- TODO #10: the number of wines sold per month in the year 2022 ordered by month
 
 -- TODO #11: an alphabetical list of customers
+SELECT Customers FROM Customers order by name;
 
 -- TODO #12: the total number of regions in the collection 
+SELECT COUNT(Regions) FROM Regions;
 
 -- TODO #13: the total number of wineries in California
+SELECT COUNT(Wineries) FROM Wineries WHERE state ='CA';
 
 -- TODO #14: the name(s) of the customer(s) that never bought a wine in alphabetical order
 
@@ -157,9 +164,11 @@ INSERT INTO Purchases VALUES
 -- TODO #16: the name(s) of the winery(ies) that do not currently have a wine in the colllection (also in alphabetical order)
 
 -- TODO #17: an alphabetical list of all wine types  
+SELECT WineTypes From WineTypes ORDER BY name;
 
 -- TODO #18: a list of winery region descriptions followed by the name of wineries in the region, their wine types, and wine names in alphabetical order of regions, wineries, wines types and names
 
 -- TODO #19: the name of the wine(s) that have 'Sauvignon' in their names 
 
 -- TODO #20: the total number of 'Merlot' type of wines in the collection
+ SELECT Wines FROM Wines WHERE type='4';
