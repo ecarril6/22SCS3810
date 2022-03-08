@@ -1,10 +1,16 @@
+-- courses database - database to allow students to query information about course scheduling
 -- TODO: add a comment section with the names of the team members of the project (limited to 2). You are allowed to work solo as well. 
+-- created at: <March 8, 2022>
+-- author: <Emily Carrillo-Ramirez>
 
 -- TODO: create the courses database
+CREATE DATABASE courses;
 
 -- TODO: "open" the database for use
+\c courses;
 
 -- TODO: (optional) drop all tables
+DROP TABLE IF EXISTS Instructors, Courses, Sections;
 
 -- TODO: create table instructors
 
