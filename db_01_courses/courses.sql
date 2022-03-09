@@ -55,7 +55,7 @@ CREATE TABLE Sections(
 -- TODO: manually insert a few instructors
     INSERT INTO Instructors (email, name, title, office, hours) VALUES
   ( 'cohenb@msudenver.edu','Cohen,Blanche','Adjunct Instructor','',''),
-  ( 'fzengmsudenver.edu','Zeng, Fanyu','Adjunct Instructor','',''),
+  ( 'fzeng@msudenver.edu','Zeng,Fanyu','Adjunct Instructor','',''),
   ( 'aibrahi8@msudenver.edu','Ibrahim,Adil','Adjunct Instructor','',''),
   ( 'rranjidh@msudenver.edu','Rajan,Ranjidha','Lecturer','',''),
   ( 'fjiang@msudenver.edu','Jiang,Feng','Affiliate/Cybersecurity Coordinator and Assistant Professor','AES-200U','M 06:00pm-07:00pm,T 06:00pm-07:00pm,W 06:00pm-07:00pm,R 06:00pm-07:00pm,F 06:00pm-07:00pm'),
