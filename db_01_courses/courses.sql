@@ -16,22 +16,19 @@ DROP TABLE IF EXISTS Instructors, Courses, Sections;
 CREATE TABLE Instructors(
   email VARCHAR(80) PRIMARY KEY,
   name VARCHAR(80) NOT NULL,
-  --nullable attributes 
   title VARCHAR(80),
   office VARCHAR(20),
-  hours VARCHAR(70)
+  hours VARCHAR(90)
  );
 
 -- TODO: create table courses
 CREATE TABLE Courses (
   prefix VARCHAR(3),
   "number" CHAR(4),
-  title VARCHAR(50) NOT NULL,
+  title VARCHAR(60) NOT NULL,
   description VARCHAR(2000) NOT NULL,
   credits SMALLINT NOT NULL,
-  --nullable attributes 
   prereqs VARCHAR(300),
-  --KEY
   PRIMARY KEY (prefix,"number")
   
   );
@@ -43,22 +40,23 @@ CREATE TABLE Sections(
   section CHAR(3) NOT NULL,
   semester VARCHAR(10) NOT NULL,
   "year" SMALLINT NOT NULL,
-  --nullable attributes
+
   instructor VARCHAR(270),
-  "times" VARCHAR(50),
+  "times" VARCHAR(80),
   start DATE,
   "end" DATE,
-  location VARCHAR(50),
+  location VARCHAR(60),
   campus VARCHAR(10),
-  --KEY 
+
   FOREIGN KEY (prefix, "number") REFERENCES Courses (prefix, "number"),
   FOREIGN KEY (instructor) REFERENCES Instructors (email)
   );
 
 -- TODO: manually insert a few instructors
     INSERT INTO Instructors (email, name, title, office, hours) VALUES
-  ( 'cohenb@msudenver.edu','Cohen,Blanche','','',''),
-  ( 'aibrahi8@msudenver.edu','Ibrahim,Adil','','',''),
+  ( 'cohenb@msudenver.edu','Cohen,Blanche','Adjunct Instructor','',''),
+  ( 'fzengmsudenver.edu','Zeng, Fanyu','Adjunct Instructor','',''),
+  ( 'aibrahi8@msudenver.edu','Ibrahim,Adil','Adjunct Instructor','',''),
   ( 'rranjidh@msudenver.edu','Rajan,Ranjidha','Lecturer','',''),
   ( 'fjiang@msudenver.edu','Jiang,Feng','Affiliate/Cybersecurity Coordinator and Assistant Professor','AES-200U','M 06:00pm-07:00pm,T 06:00pm-07:00pm,W 06:00pm-07:00pm,R 06:00pm-07:00pm,F 06:00pm-07:00pm'),
   ( 'tle61@msudenver.edu','Le,ThienNgo','Lecturer','',''),
