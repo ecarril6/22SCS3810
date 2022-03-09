@@ -19,8 +19,8 @@ CREATE TABLE Instructors(
   --nullable attributes 
   title VARCHAR(50),
   office VARCHAR(20),
-  hours VARCHAR(50),
-  );
+  hours VARCHAR(50)
+ );
 
 -- TODO: create table courses
 CREATE TABLE Courses (
@@ -32,7 +32,7 @@ CREATE TABLE Courses (
   --nullable attributes 
   prereqs VARCHAR(300),
   --KEY
-  PRIMARY KEY (prefix,"number"),
+  PRIMARY KEY (prefix,"number")
   
   );
 -- TODO: create table sections
