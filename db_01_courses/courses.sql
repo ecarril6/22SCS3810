@@ -63,7 +63,7 @@ CREATE TABLE Sections(
   ( 'fjiang@msudenver.edu','Jiang,Feng','Affiliate/Cybersecurity Coordinator and Assistant Professor','AES-200U','M 06:00pm-07:00pm,T 06:00pm-07:00pm,W 06:00pm-07:00pm,R 06:00pm-07:00pm,F 06:00pm-07:00pm'),
   ( 'tle61@msudenver.edu','Le,ThienNgo','Lecturer','',''),
   ( 'geinitz@msudenver.edu','Geinitz,Steven','Assistant Professor','',''),
-  ( 'pauljod@msudenver.edu','Paul,Jody','Professor','AES-200Q',''),
+  ( 'pauljod@msudenver.edu','Paul,Jody','Professor','AES-200Q','M 01:00pm-03:00pm, W 08:00am-11:00am'),
   ( 'wzhu1@msudenver.edu','Zhu,Weiying','Associate Chair and Professor','',''),
   ( 'tmota@msudenver.edu','Mota,Thyago Lisboa','Assistant Professor','AES-200R','M 01:00pm-03:00pm, W 08:00am-11:00am'),
   ( 'codd@msudenver.edu','Codd,Edgar','','',''),
