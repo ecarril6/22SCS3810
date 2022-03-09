@@ -14,10 +14,10 @@ DROP TABLE IF EXISTS Instructors, Courses, Sections;
 
 -- TODO: create table instructors
 CREATE TABLE Instructors(
-  email VARCHAR(50) PRIMARY KEY,
-  name VARCHARR(50) NOT NULL,
+  email VARCHAR(80) PRIMARY KEY,
+  name VARCHAR(80) NOT NULL,
   --nullable attributes 
-  title VARCHAR(50),
+  title VARCHAR(80),
   office VARCHAR(20),
   hours VARCHAR(50)
  );
@@ -58,10 +58,9 @@ CREATE TABLE Sections(
 -- TODO: manually insert a few instructors
     INSERT INTO Instructors (email, name, title, office, hours) VALUES
   ( 'cohenb@msudenver.edu','Cohen,Blanche','','',''),
-  ( 'fzeng@msudenver.edu','Zeng,Fanyu','','',''),
   ( 'aibrahi8@msudenver.edu','Ibrahim,Adil','','',''),
   ( 'rranjidh@msudenver.edu','Rajan,Ranjidha','Lecturer','',''),
-  ( 'fjiang@msudenver.edu','Jiang,Feng','Affiliate/Cybersecurity Coordinator and Assistant Professor','AES-200U',''),
+  ( 'fjiang@msudenver.edu','Jiang,Feng','Affiliate/Cybersecurity Coordinator and Assistant Professor','AES-200U','M 06:00pm-07:00pm,T 06:00pm-07:00pm,W 06:00pm-07:00pm,R 06:00pm-07:00pm,F 06:00pm-07:00pm'),
   ( 'tle61@msudenver.edu','Le,ThienNgo','Lecturer','',''),
   ( 'geinitz@msudenver.edu','Geinitz,Steven','Assistant Professor','',''),
   ( 'pauljod@msudenver.edu','Paul,Jody','Professor','AES-200Q',''),
@@ -71,7 +70,7 @@ CREATE TABLE Sections(
   ( 'beatys@msudenver.edu','Beaty,Steven','CS Chair and Professor','',''
   );
   
--- TODO: manually insert a few courses
+-- TODO: manually insert a few courses (19 courses)
 INSERT INTO Courses (prefix, "number", title, description, credits, prereqs) VALUES
   ( 'CS','1030','Computer Science Principles','Computer Science Principles introduces students to the central ideas of computer science vital for success in today''s world. Students are invited to develop the computational thinking skills that apply across disciplines, as we explore computing from multiple perspectives, including: cognitive, economic, ethical, legal, mathematical, philosophical, social, and technical. The course integrates computational thinking practices with big ideas in computing to address: collaborative teamwork, communication, creativity, critical thinking, innovation, problem solving, and programming. Students are afforded the opportunity to participate in active-learning experiences and to create computational artifacts that bring ideas to life.',4,''),
   ( 'CS','1050','Computer Science 1','This is the first course in the computer science core sequence. Students learn a modern programming language and the basic skills needed to analyze problems and construct programs for their solutions. The emphasis of the course is on the techniques of algorithm development, correctness, and programming style. Students are also introduced to the fundamentals of software engineering and the software-development life cycle.',4,'CS 1030 or readiness for MTH 1110 with a grade of "C-" or better.'),
