@@ -19,7 +19,7 @@ CREATE TABLE Instructors(
   --nullable attributes 
   title VARCHAR(80),
   office VARCHAR(20),
-  hours VARCHAR(50)
+  hours VARCHAR(70)
  );
 
 -- TODO: create table courses
